@@ -6,23 +6,25 @@
     <child link="chassis" />
   </joint>
 
+  <xacro:property name="chassis_mass" value="5.0" />
+  <xacro:property name="chassis_size" value="0.5 0.3 0.07" />
   <link name="chassis">
     <!-- pose and inertial -->
     <pose>0 0 0.1 0 0 0</pose>
     <inertial>
-      <mass value="5"/>
+      <mass value="${chassis_mass}" />
       <origin rpy="0 0 0" xyz="0 0 0.1"/>
       <inertia ixx="0.0395416666667" ixy="0" ixz="0" iyy="0.106208333333" iyz="0" izz="0.106208333333"/>
     </inertial>
     <collision>
       <geometry>
-        <box size="0.5 0.3 0.07"/>
+        <box size="${chassis_size}" />
       </geometry>
     </collision>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.5 0.3 0.07"/>
+        <box size="${chassis_size}"/>
       </geometry>
     </visual>
   </link>
