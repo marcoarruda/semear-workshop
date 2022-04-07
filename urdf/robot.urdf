@@ -1,5 +1,11 @@
 <?xml version="1.0" ?>
 <robot name="m2wr">
+  <link name="dummy"></link>
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy" />
+    <child link="chassis" />
+  </joint>
+
   <link name="chassis">
     <!-- pose and inertial -->
     <pose>0 0 0.1 0 0 0</pose>

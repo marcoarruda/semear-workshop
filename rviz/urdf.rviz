@@ -67,6 +67,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        dummy:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         right_wheel:
           Alpha: 1
           Show Axes: false
@@ -82,7 +86,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: chassis
+    Fixed Frame: dummy
     Frame Rate: 30
   Name: root
   Tools:
@@ -122,9 +126,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.40039801597595215
+      Pitch: 0.47039806842803955
       Target Frame: <Fixed Frame>
-      Yaw: 3.9485719203948975
+      Yaw: 3.868570327758789
     Saved: ~
 Window Geometry:
   Displays:
