@@ -1,0 +1,4 @@
+<launch>
+  <param name="robot_description" command="cat '$(find robot_description)/urdf/robot.urdf'" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_description)/rviz/urdf.rviz" />
+</launch>
