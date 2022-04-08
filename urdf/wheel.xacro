@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:macro name="wheel" params="name diameter">
+  <xacro:macro name="wheel" params="name diameter right">
     <link name="${name}_wheel">
       <inertial>
         <mass value="0.2"/>
@@ -21,7 +21,12 @@
       </visual>
     </link>
     <joint name="joint_${name}_wheel" type="continuous">
-      <origin rpy="0 0 0" xyz="-0.15 -0.15 0"/>
+      <xacro:if value="${right == 1}">
+        <origin rpy="0 0 0" xyz="-0.15 -0.15 0" />
+      </xacro:if>
+      <xacro:if value="${right == 0}">
+        <origin rpy="0 0 0" xyz="-0.15 0.15 0" />
+      </xacro:if>
       <child link="${name}_wheel"/>
       <parent link="chassis"/>
       <axis rpy="0 0 0" xyz="0 1 0"/>
