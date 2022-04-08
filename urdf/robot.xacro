@@ -2,6 +2,7 @@
 <robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:include filename="$(find robot_description)/urdf/wheel.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/caster.xacro" />
 
   <!-- Dummy -->
   <link name="dummy"></link>
@@ -36,4 +37,7 @@
   <!-- Wheels -->
   <xacro:wheel right="1" name="right" diameter="0.2" />
   <xacro:wheel right="0" name="left" diameter="0.2" />
+
+  <!-- Caster -->
+  <xacro:caster_sphere name="caster" diameter="0.1" origin="0.20 0 -0.05" />
 </robot>
