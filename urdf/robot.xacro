@@ -34,5 +34,5 @@
   </link>
 
   <!-- Wheels -->
-  <xacro:wheel name="right" />
+  <xacro:wheel name="right" diameter="0.2" />
 </robot>
