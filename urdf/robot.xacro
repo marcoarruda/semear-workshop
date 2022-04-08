@@ -1,9 +1,10 @@
 <?xml version="1.0" ?>
 <robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find robot_description)/urdf/wheel.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/camera.xacro" />
   <xacro:include filename="$(find robot_description)/urdf/caster.xacro" />
   <xacro:include filename="$(find robot_description)/urdf/plugins.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/wheel.xacro" />
 
   <!-- Dummy -->
   <link name="dummy"></link>
@@ -41,4 +42,7 @@
 
   <!-- Caster -->
   <xacro:caster_sphere name="caster" diameter="0.1" origin="0.20 0 -0.05" />
+
+  <!-- Camera -->
+  <xacro:camera joint="joint_chassis_camera" link="link_camera" parent="chassis" />
 </robot>
