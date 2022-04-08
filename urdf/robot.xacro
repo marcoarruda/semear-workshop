@@ -3,6 +3,7 @@
 
   <xacro:include filename="$(find robot_description)/urdf/wheel.xacro" />
   <xacro:include filename="$(find robot_description)/urdf/caster.xacro" />
+  <xacro:include filename="$(find robot_description)/urdf/plugins.xacro" />
 
   <!-- Dummy -->
   <link name="dummy"></link>
