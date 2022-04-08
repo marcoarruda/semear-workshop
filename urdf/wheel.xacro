@@ -25,10 +25,10 @@
     </link>
     <joint name="joint_${name}_wheel" type="continuous">
       <xacro:if value="${right == 1}">
-        <origin rpy="0 0 0" xyz="-0.15 -0.15 0" />
+        <origin rpy="0 0 0" xyz="0 -0.15 0" />
       </xacro:if>
       <xacro:if value="${right == 0}">
-        <origin rpy="0 0 0" xyz="-0.15 0.15 0" />
+        <origin rpy="0 0 0" xyz="0 0.15 0" />
       </xacro:if>
       <child link="${name}_wheel"/>
       <parent link="chassis"/>

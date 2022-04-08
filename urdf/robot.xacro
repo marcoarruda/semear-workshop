@@ -41,7 +41,8 @@
   <xacro:wheel right="0" name="left" diameter="0.2" />
 
   <!-- Caster -->
-  <xacro:caster_sphere name="caster" diameter="0.1" origin="0.20 0 -0.05" />
+  <xacro:caster_sphere name="caster" diameter="0.1" origin="-0.20 0 -0.05" />
+  <xacro:caster_sphere name="caster_back" diameter="0.1" origin="0.20 0 -0.05" />
 
   <!-- Camera -->
   <xacro:camera joint="joint_chassis_camera" link="link_camera" parent="chassis" />
