@@ -1,6 +1,9 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:macro name="wheel" params="name diameter right">
+    <gazebo reference="${name}_wheel">
+      <material>Gazebo/Red</material>
+    </gazebo>
     <link name="${name}_wheel">
       <inertial>
         <mass value="0.2"/>

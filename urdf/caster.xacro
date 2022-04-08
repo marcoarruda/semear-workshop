@@ -1,54 +1,33 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:macro name="caster_cube" params="name dimensions origin">
-    <link name="${name}_caster">
-      <inertial>
-        <mass value="0.2"/>
-        <origin rpy="0 0 0" xyz="${origin}"/>
-        <inertia ixx="0.000526666666667" ixy="0" ixz="0" iyy="0.000526666666667" iyz="0" izz="0.001"/>
-      </inertial>
-      <collision name="right_caster_collision">
-        <origin rpy="0 0 0" xyz="${origin}"/>
-        <geometry>
-          <box size="${dimensions}"/>
-        </geometry>
-      </collision>
-      <visual name="right_caster_visual">
-        <origin rpy="0 0 0" xyz="${origin}"/>
-        <geometry>
-          <box size="${dimensions}"/>
-        </geometry>
-      </visual>
-    </link>
-    <joint name="joint_${name}_caster" type="continuous">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <child link="${name}_caster"/>
-      <parent link="chassis"/>
-      <axis rpy="0 0 0" xyz="0 1 0"/>
-      <limit effort="10000" velocity="1000"/>
-      <joint_properties damping="1.0" friction="1.0"/>
-    </joint>
-  </xacro:macro>
   <xacro:macro name="caster_sphere" params="name diameter origin">
+    <gazebo reference="${name}_caster">
+      <mu1>0.0</mu1>
+      <mu2>0.0</mu2>
+      <material>Gazebo/Blue</material>
+    </gazebo>
     <link name="${name}_caster">
       <inertial>
         <mass value="0.2"/>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <inertia ixx="0.000526666666667" ixy="0" ixz="0" iyy="0.000526666666667" iyz="0" izz="0.001"/>
       </inertial>
-      <collision name="right_caster_collision">
+      <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
           <sphere radius="${diameter/2}"/>
         </geometry>
       </collision>
-      <visual name="right_caster_visual">
+      <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
           <sphere radius="${diameter/2}"/>
         </geometry>
       </visual>
     </link>
+    <gazebo reference="joint_${name}_caster">
+      <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
     <joint name="joint_${name}_caster" type="continuous">
       <origin rpy="0 0 0" xyz="${origin}"/>
       <child link="${name}_caster"/>
